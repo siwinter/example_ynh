@@ -7,20 +7,23 @@
         "fr": "Écouter de la musique, des podcasts et des programmes radio depuis le disque local et divers services de streaming"
     },
     "version": "3.2.0~ynh1",
-    "url": "https://www.mopidy.com/",
+    "url": "https://www.mopidy.com",
     "upstream": {
-        "license": "AGPL-3.0",
-        "website": "https://nextcloud.com",
-        "demo": "https://demo.nextcloud.com/",
-        "admindoc": "https://docs.nextcloud.com/server/stable/admin_manual/",
-        "userdoc": "https://docs.nextcloud.com/server/latest/user_manual/en/",
-        "code": "https://github.com/nextcloud/server"
+        "license": "Apache-2.0",
+        "website": "https://www.mopidy.com",
+        "admindoc": "https://docs.mopidy.com/en/latest",
+        "userdoc": "https://yunohost.org/apps/",
+        "code": "https://github.com/mopidy/mopidy"
     },
-    "license": "AGPL-3.0",
+    "license": "Apache-2.0",
     "maintainer": {
-        "name": "Kay0u",
-        "email": "pierre@kayou.io"
+        "name": "siwinter",
+        "email": "siegfried.winter@arcor.de"
     },
+	"previous_maintainer": {
+		"name": "cyp",
+		"email": "cyp@rouquin.me"
+	},
     "requirements": {
         "yunohost": ">= 4.2.8.3"
     },
