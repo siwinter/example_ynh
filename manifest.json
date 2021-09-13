@@ -54,11 +54,11 @@
                 "default": false
             },
             {
-                "name": "user_home",
+                "name": "mpd_ext",
                 "type": "boolean",
-                "ask": {
-                    "en": "Access the users home folder from Nextcloud?",
-                    "fr": "Accéder au dossier personnel des utilisateurs depuis Nextcloud ?"
+                "help": {
+                    "en": "Activate MPD extension (this will open port 6600)",
+                    "fr": "Activer l'extension MPD (cela ouvrira le port 6600)"
                 },
                 "default": false
             }
