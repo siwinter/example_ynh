@@ -29,36 +29,29 @@
     },
     "multi_instance": false,
     "services": [
-        "nginx",
-        "php7.3-fpm",
-        "mysql"
+        "nginx"
     ],
     "arguments": {
         "install" : [
             {
                 "name": "domain",
                 "type": "domain",
-                "example": "domain.org"
+                "example": "example.com"
             },
             {
                 "name": "path",
                 "type": "path",
-                "example": "/nextcloud",
-                "default": "/nextcloud"
-            },
-            {
-                "name": "admin",
-                "type": "user",
-                "example": "homer"
+                "example": "/mopidy",
+                "default": "/mopidy"
             },
             {
                 "name": "is_public",
                 "type": "boolean",
                 "help": {
-                    "en": "If enabled, Nextcloud will be accessible by Nextcloud Desktop and by users without a YunoHost account. This can be changed later in the webadmin.",
-                    "fr": "Si cette case est cochée, Nextcloud sera accessible par Nextcloud Desktop et par les utilisateurs n’ayant pas de compte YunoHost. Vous pourrez changer dans la webadmin."
+                    "en": "Public app can be used by anonymous visitors.",
+                    "fr": "L'application publique peut être utilisée par des visiteurs anonymes "
                 },
-                "default": true
+                "default": false
             },
             {
                 "name": "user_home",
