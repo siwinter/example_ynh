@@ -1,64 +1,68 @@
 {
-	"id": "mopidy",
-	"name": "Mopidy",
-	"packaging_format": 1,
-	"description": {
-		"en": "Play music, podcasts and radio programs from local disk and various streaming services",
-		"fr": "Écouter de la musique, des podcasts et des programmes radio depuis le disque local et divers services de streaming"
-	},
-	"version": "3.2.0~ynh1",
-	"url": "https://www.mopidy.com/",
-    "upstream": {
-        "license": "Apache-2.0",
-        "website": "https://www.mopidy.com/",
-        "admindoc": "https://docs.mopidy.com/en/latest/",
-        "userdoc": "https://yunohost.org/apps",
-        "code": "https://github.com/mopidy/mopidy"
+    "id": "nextcloud",
+    "name": "Nextcloud",
+    "packaging_format": 1,
+    "description": {
+        "en": "Online storage, file sharing platform and various other applications",
+        "fr": "Stockage en ligne, plateforme de partage de fichiers et diverses autres applications"
     },
-	"license": "Apache-2.0",
-	"maintainer": {
-		"name": "siwinter",
-		"email": "siegfried.winter@arcor.de"
-	},
-	"previous_maintainer": {
-		"name": "cyp",
-		"email": "cyp@rouquin.me"
-	},
-	"requirements": {
-		"yunohost": ">= 4.2.0"
-	},
-    "multi_instance": false,
+    "version": "22.1.1~ynh1",
+    "url": "https://nextcloud.com",
+    "upstream": {
+        "license": "AGPL-3.0",
+        "website": "https://nextcloud.com",
+        "demo": "https://demo.nextcloud.com/",
+        "admindoc": "https://docs.nextcloud.com/server/stable/admin_manual/",
+        "userdoc": "https://docs.nextcloud.com/server/latest/user_manual/en/",
+        "code": "https://github.com/nextcloud/server"
+    },
+    "license": "AGPL-3.0",
+    "maintainer": {
+        "name": "Kay0u",
+        "email": "pierre@kayou.io"
+    },
+    "requirements": {
+        "yunohost": ">= 4.2.8.3"
+    },
+    "multi_instance": true,
     "services": [
-        "nginx"
+        "nginx",
+        "php7.3-fpm",
+        "mysql"
     ],
     "arguments": {
         "install" : [
             {
                 "name": "domain",
                 "type": "domain",
-                "example": "example.com"
+                "example": "domain.org"
             },
             {
                 "name": "path",
                 "type": "path",
-                "example": "/example",
-                "default": "/mopidy"
+                "example": "/nextcloud",
+                "default": "/nextcloud"
+            },
+            {
+                "name": "admin",
+                "type": "user",
+                "example": "homer"
             },
             {
                 "name": "is_public",
                 "type": "boolean",
                 "help": {
-                    "en": "Public app can be used by anonymous visitors",
-                    "fr": "L'application publique peut être utilisée par des visiteurs anonymes"
+                    "en": "If enabled, Nextcloud will be accessible by Nextcloud Desktop and by users without a YunoHost account. This can be changed later in the webadmin.",
+                    "fr": "Si cette case est cochée, Nextcloud sera accessible par Nextcloud Desktop et par les utilisateurs n’ayant pas de compte YunoHost. Vous pourrez changer dans la webadmin."
                 },
-                "default": false
+                "default": true
             },
             {
-                "name": "mpd_ext",
+                "name": "user_home",
                 "type": "boolean",
-                "help": {
-                    "en": "Activate MPD extension (this will open port 6600)",
-                    "fr": "Activer l'extension MPD (cela ouvrira le port 6600)"
+                "ask": {
+                    "en": "Access the users home folder from Nextcloud?",
+                    "fr": "Accéder au dossier personnel des utilisateurs depuis Nextcloud ?"
                 },
                 "default": false
             }
